@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA – Wir bringen EUCH aufs nächste Level</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <canvas id="particles-bg"></canvas>
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="cursor" id="customCursor"></div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/LogoHell.svg" alt="AURA Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#impressum">Impressum</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <img src="images/hero.gif" alt="Hero Background" class="hero-bg-gif">
+            <div class="hero-parallax" id="heroParallax"></div>
+            <div class="hero-content parallax">
+                <h1>Wir bringen euch aufs nächste Level</h1>
+                <p class="slogan">Weil ihr mehr Präsenz verdient</p>
+            </div>
+        </section>
+        <section class="leistungen scroll-slide-right scroll-fade-out" id="leistungen">
+            <h2 class="text-reveal bounce-in">Unsere Leistungen</h2>
+            <div class="leistungen-cards">
+                <div class="leistung-card card-scroll-effect stagger-fade-in dynamic-shadow flip-3d">
+                    <div class="icon placeholder-icon morph-shape">🌐</div>
+                    <h3>Websites</h3>
+                    <p>Modern, responsiv und individuell für euren Verein.</p>
+                </div>
+                <div class="leistung-card card-scroll-effect stagger-fade-in dynamic-shadow flip-3d">
+                    <div class="icon placeholder-icon morph-shape">📸</div>
+                    <h3>Fotos & Videos</h3>
+                    <p>Professionelle Medien für Social Media und Website.</p>
+                </div>
+                <div class="leistung-card card-scroll-effect stagger-fade-in dynamic-shadow flip-3d">
+                    <div class="icon placeholder-icon morph-shape">📱</div>
+                    <h3>Social Media Management</h3>
+                    <p>Wir übernehmen Planung, Gestaltung und Analyse.</p>
+                </div>
+                <div class="leistung-card card-scroll-effect stagger-fade-in dynamic-shadow flip-3d">
+                    <div class="icon placeholder-icon morph-shape">📊</div>
+                    <h3>Analysen & Reports</h3>
+                    <p>Wachstumsanalysen und Wirksamkeitsreports für euren Erfolg.</p>
+                </div>
+            </div>
+            <div style="margin-top:2.5rem; text-align:center;">
+                <a href="mehr-info.html" class="leistungen-mehr-btn ripple" style="display:inline-block; padding:1rem 2.2rem; font-size:1.1rem; font-weight:700; border-radius:0.7rem; background:linear-gradient(90deg, var(--blue1), var(--blue2)); color:var(--black); text-decoration:none; box-shadow:0 2px 8px var(--shadow); transition:background 0.2s, transform 0.2s;">Mehr dazu</a>
+            </div>
+        </section>
+        <section class="projekte scroll-slide-left scroll-fade-out scroll-skew" id="projekte">
+            <canvas class="section-particles" id="projekteParticles"></canvas>
+            <h2 class="text-reveal bounce-in">Projekte</h2>
+            <div class="galerie">
+                <a href="#projekt1" class="projekt-card ripple card-scroll-effect stagger-fade-in dynamic-shadow" data-img="images/mitter.png">
+                    <div class="projekt-img placeholder-img">
+                        <img src="images/mitter.png" height="100%" alt="Mitter">
+                    </div>
+                    <div class="projekt-title">Mitter</div>
+                </a>
+                <a href="#projekt2" class="projekt-card ripple card-scroll-effect stagger-fade-in dynamic-shadow" data-img="images/aura.png">
+                    <div class="projekt-img placeholder-img"> 
+                        <img src="images/aura.png" height="100%" alt="Aura">
+                    </div>
+                    <div class="projekt-title">Aura</div>
+                </a>
+                <a href="#projekt3" class="projekt-card ripple card-scroll-effect stagger-fade-in dynamic-shadow" data-img="images/mulitathletecoaching.png">
+                    <div class="projekt-img placeholder-img"> 
+                        <img src="images/mulitathletecoaching.png" height="100%" alt="Multiathlete">
+                    </div>
+                    <div class="projekt-title">Multiathlete</div>
+                </a>
+            </div>
+        </section>
+        <section class="kontakt scroll-slide-up scroll-fade-out" id="kontakt">
+            <canvas class="section-particles" id="kontaktParticles"></canvas>
+            <h2 class="text-reveal bounce-in">Kontakt</h2>
+            <form class="kontakt-formular magnetic">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="E-Mail" required>
+                <textarea placeholder="Nachricht" required></textarea>
+                <button type="submit" class="glitch-hover">Absenden</button>
+            </form>
+        </section>
+        <section class="social-media scroll-rotate" id="social">
+            <h2 class="text-reveal">Folge uns</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon scroll-rotate-in" title="Instagram"><img
+                        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+                        alt="Instagram"></a>
+                <a href="#" class="social-icon scroll-rotate-in" title="Facebook"><img
+                        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"
+                        alt="Facebook"></a>
+                <a href="#" class="social-icon scroll-rotate-in" title="YouTube"><img
+                        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube"></a>
+            </div>
+        </section>
+        <!-- <section class="impressum" id="impressum">
+      <h2>Impressum</h2>
+      <p>Platzhalter für Impressum. Hier kommen die rechtlichen Angaben hin.</p>
+      <h2>Datenschutz</h2>
+      <p>Platzhalter für Datenschutzerklärung. Hier kommen die Datenschutzinformationen hin.</p>
+    </section> -->
+    </main>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img src="" alt="Projektbild" id="lightboxImg">
+    </div>
+    <button id="backToTop" title="Nach oben">&#8679;</button>
+    <footer>
+        <div class="footer-content">
+            <span>Shaping presence. | &copy; 2024 AURA</span>
+        </div>
+    </footer>
+</body>
+
+</html>

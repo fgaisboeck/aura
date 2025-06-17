@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA – Creative Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/LogoDunkel.svg" alt="AURA Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <img src="images/hero.gif" alt="Hero Background" class="hero-bg">
+            <div class="hero-content">
+                <h1>Shaping Presence</h1>
+                <p class="subtitle">für Vereine, die in die Zukunft schauen</p>
+            </div>
+        </section>
+
+        <section class="portfolio" id="portfolio">
+            <h2>Portfolio</h2>
+            <p class="section-intro">Jedes unserer Projekte erzählt eine eigene Geschichte – geprägt von kreativen Ideen, individuellen Lösungen und erfolgreicher Zusammenarbeit.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/mitter.png" alt="Mitter Projekt">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="category">WEBSITE</span>
+                        <h3>Mitter</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/aura.png" alt="Aura Projekt">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="category">SOCIAL MEDIA</span>
+                        <h3>Aura</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="images/mulitathletecoaching.png" alt="Multiathlete Projekt">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="category">MARKETING</span>
+                        <h3>Multiathlete</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leistungen" id="leistungen">
+            <h2>Leistungen</h2>
+            <div class="leistungen-grid">
+                <div class="leistung-item">
+                    <h3>Website & Webdesign</h3>
+                    <p>Webseite für Jeden – Werde mit deinem Verein online sichtbar und sichere dir einen professionellen ersten Eindruck!</p>
+                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
+                </div>
+                <div class="leistung-item">
+                    <h3>Foto & Videografie</h3>
+                    <p>Business oder Privat – Erinnerungen, die ein Leben lang halten. Seien es Produkt-, Imagebilder oder Event-Shootings.</p>
+                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
+                </div>
+                <div class="leistung-item">
+                    <h3>Social Media Management</h3>
+                    <p>Vom ersten Post bis zur erfolgreichen Kampagne – wir begleiten euch gerne auf eurem Weg zur digitalen Präsenz.</p>
+                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
+                </div>
+                <div class="leistung-item">
+                    <h3>Marketing & Content</h3>
+                    <p>Das wichtigste für einen professionellen Auftritt ist ein einheitliches Design und eine klare Linie.</p>
+                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2>Über uns</h2>
+                <p class="intro">Hi! Wir sind AURA.</p>
+                <p>Ein junges Team, das Vereinen hilft, herauszustechen und einen bleibenden Eindruck bei anderen zu hinterlassen.</p>
+                <p class="quote">"Choose your dreams over your excuses!"</p>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"100% Weiterempfehlung! AURA hat unseren Verein komplett neu aufgestellt und es war die beste Entscheidung. Die Zusammenarbeit war völlig unkompliziert und das Team ist einfach super sympathisch!"</p>
+                    <span class="author">- Mitter Verein</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Let your Presence Shine</h2>
+            <p>GRATIS ERSTGESPRÄCH - Lass uns zusammen herausfinden, wie wir dir und deinem Verein helfen können.</p>
+            <a href="#kontakt" class="cta-button">Kontakt</a>
+        </section>
+
+        <section class="kontakt" id="kontakt">
+            <h2>Kontakt</h2>
+            <form class="kontakt-formular">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="E-Mail" required>
+                <textarea placeholder="Nachricht" required></textarea>
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+
+        <section class="social-media">
+            <h2>Get social with us</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">YouTube</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutzerklärung</a>
+                <a href="#">AGB</a>
+            </div>
+            <p>&copy; 2024 AURA. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html> 
