@@ -16,14 +16,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect - Auto Hide/Show
     const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    const scrollThreshold = 100; // Mindest-Scroll-Distanz bevor die Navbar wieder erscheint
+    
+    // Initialisierung: Header beim ersten Laden ausblenden
+    navbar.classList.add('hidden');
+    
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Wenn ganz oben, Navbar ausblenden
+        if (scrollTop <= 0) {
+            navbar.classList.add('hidden');
             navbar.classList.remove('scrolled');
+        } 
+        // Beim Scrollen nach unten, Navbar einblenden
+        else if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            navbar.classList.remove('hidden');
+            navbar.classList.add('scrolled');
+        } 
+        // Beim Scrollen nach oben, Navbar einblenden
+        else if (scrollTop < lastScrollTop) {
+            navbar.classList.remove('hidden');
+            navbar.classList.add('scrolled');
         }
+        
+        lastScrollTop = scrollTop;
     });
 
     // Smooth Scroll für Anker-Links

@@ -1,0 +1,39 @@
+# MailerSend E-Mail-Konfiguration für gaisbockfabian07@gmail.com
+
+## Schritt-für-Schritt-Anleitung:
+
+### 1. MailerSend-Konto erstellen
+- Gehe zu https://www.mailersend.com/
+- Erstelle ein kostenloses Konto
+- Verifiziere deine E-Mail-Adresse
+
+### 2. Domain verifizieren
+- Gehe zu "Domains" in deinem MailerSend-Dashboard
+- Füge deine Domain hinzu (z.B. deine-website.com)
+- Folge den DNS-Anweisungen zur Verifizierung
+- Warte bis die Domain verifiziert ist (kann bis zu 24h dauern)
+
+### 3. API-Token erstellen
+- Gehe zu "API Keys" in deinem Dashboard
+- Klicke auf "Create API Key"
+- Gib einen Namen ein (z.B. "Website Contact Form")
+- Kopiere den generierten Token
+
+### 4. .env-Datei erstellen
+Erstelle eine .env-Datei im Hauptverzeichnis deines Projekts mit folgendem Inhalt:
+
+MAILERSEND_API_TOKEN=dein_api_token_hier
+MAIL_FROM=contact@deine-domain.com
+MAIL_TO=gaisbockfabian07@gmail.com
+
+### 5. Dependencies installieren
+Führe im Terminal aus:
+npm install
+
+### 6. Server starten
+npm start
+
+## Wichtige Hinweise:
+- Die MAIL_FROM-Adresse muss von deiner verifizierten Domain stammen
+- Falls du keine eigene Domain hast, kannst du eine Subdomain von MailerSend verwenden
+- Der API-Token muss geheim gehalten werden und darf nicht in den Code eingefügt werden 

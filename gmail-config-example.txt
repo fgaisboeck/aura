@@ -1,0 +1,12 @@
+# Gmail E-Mail-Konfiguration
+# Erstelle eine .env-Datei im Hauptverzeichnis mit folgenden Inhalten:
+
+GMAIL_USER=deine_email@gmail.com
+GMAIL_APP_PASSWORD=dein_app_passwort_hier
+
+# Anleitung für Gmail App-Passwort:
+# 1. Gehe zu deinen Google-Kontoeinstellungen
+# 2. Aktiviere 2-Faktor-Authentifizierung
+# 3. Gehe zu "App-Passwörter"
+# 4. Erstelle ein neues App-Passwort für "Mail"
+# 5. Verwende dieses Passwort in GMAIL_APP_PASSWORD 
