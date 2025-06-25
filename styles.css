@@ -119,6 +119,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: -1;
 }
 
@@ -332,12 +333,15 @@ h1, h2, h3 {
 /* Kontakt Section */
 .kontakt {
     padding: calc(var(--spacing) * 4) var(--spacing);
+    background: var(--primary-color);
+    color: white;
 }
 
 .kontakt h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
+    color: white;
 }
 
 .kontakt-content {
@@ -349,7 +353,7 @@ h1, h2, h3 {
 .kontakt-content p {
     margin-bottom: 2rem;
     font-size: 1.1rem;
-    color: var(--light-text);
+    color: white;
 }
 
 .kontakt-formular {
@@ -417,9 +421,10 @@ h1, h2, h3 {
 
 /* Footer */
 footer {
-    background: var(--primary-color);
-    color: white;
+    background: white;
+    color: var(--primary-color);
     padding: var(--spacing);
+    border-top: 1px solid #eee;
 }
 
 .footer-content {
@@ -433,7 +438,7 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: var(--primary-color);
     text-decoration: none;
     margin: 0 1rem;
     font-size: 0.9rem;
@@ -456,16 +461,28 @@ footer {
     background: var(--secondary-color);
 }
 
+/* Spezielle Button-Styles für Kontakt-Sektion */
+.kontakt .cta-button {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid white;
+}
+
+.kontakt .cta-button:hover {
+    background: transparent;
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        padding: 1rem var(--spacing);
     }
-
+    
     .burger {
         display: flex;
     }
-
+    
     .nav-links {
         position: fixed;
         top: 0;
@@ -476,59 +493,64 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.5s;
+        transition: right 0.3s ease;
         z-index: 1000;
     }
-
+    
     .nav-links.active {
         right: 0;
     }
-
+    
     .nav-links li {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
     }
-
+    
     .nav-links a {
         font-size: 1.2rem;
     }
-
+    
     .hero-content h1 {
         font-size: 2.5rem;
     }
-
+    
     .hero-content .subtitle {
         font-size: 1rem;
     }
-
+    
+    /* Mobile Video Optimierung */
+    .hero-bg {
+        object-fit: cover;
+        object-position: center 20%;
+        transform: scale(1.1);
+    }
+    
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
-
+    
     .leistungen-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
-
+    
     .about-content {
         padding: 0 1rem;
     }
-
+    
     .kontakt-formular {
         padding: 0 1rem;
     }
-
+    
     .social-icons {
         flex-direction: column;
         gap: 1rem;
     }
-
+    
     .footer-links {
-        display: flex;
         flex-direction: column;
         gap: 1rem;
+        text-align: center;
     }
-
+    
     .footer-links a {
         margin: 0;
     }
