@@ -59,4 +59,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Scroll-Arrow nach 1,2 Sekunden einblenden
+    setTimeout(() => {
+        const scrollArrow = document.getElementById('scrollArrow');
+        if (scrollArrow) scrollArrow.style.display = 'flex';
+    }, 1200);
+
+    // Scroll-Arrow Klick: sanft zur nächsten Sektion scrollen
+    const scrollArrow = document.getElementById('scrollArrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            const nextSection = document.querySelector('section.leistungen');
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 }); 

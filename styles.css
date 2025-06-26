@@ -154,6 +154,49 @@ h1, h2, h3 {
     text-transform: uppercase;
 }
 
+/* Scroll-Arrow für Hero-Bereich */
+.scroll-arrow {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+    opacity: 0.7;
+    cursor: pointer;
+    animation: arrow-fadein 0.7s ease 1.2s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.7);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.2s, border 0.2s;
+}
+
+@keyframes arrow-fadein {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 0.7; transform: translateY(0); }
+}
+
+.scroll-arrow svg {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    transition: transform 0.2s;
+    width: 32px;
+    height: 32px;
+}
+
+.scroll-arrow:hover svg {
+    transform: translateY(8px) scale(1.1);
+}
+
+.scroll-arrow:hover {
+    background: rgba(255,255,255,0.5);
+    border: 2px solid white;
+}
+
 /* Portfolio Section */
 .portfolio {
     padding: calc(var(--spacing) * 4) var(--spacing);
@@ -288,6 +331,31 @@ h1, h2, h3 {
     font-size: 1.2rem;
     margin-top: 2rem;
     color: var(--light-text);
+}
+
+.about-extra {
+    margin-top: 2.5rem;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-extra p {
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.about-extra p strong {
+    display: block;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 /* Testimonials */
@@ -553,6 +621,25 @@ footer {
     
     .footer-links a {
         margin: 0;
+    }
+    
+    .scroll-arrow {
+        right: 1rem;
+        bottom: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+    .scroll-arrow svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .about-extra {
+        max-width: 95%;
+        font-size: 1rem;
+    }
+    .about-extra p strong {
+        font-size: 1.1rem;
     }
 }
 
