@@ -1,0 +1,236 @@
+/* Custom Styling für n8n Chatbot - AURA Creative Studio */
+
+:root {
+    /* Primärfarben - angepasst an AURA Design */
+    --chat--color-primary: #000000; /* Schwarz für professionelles Aussehen */
+    --chat--color-primary-shade-50: #333333;
+    --chat--color-primary-shade-100: #666666;
+    
+    /* Sekundärfarben */
+    --chat--color-secondary: #f0f0f0; /* Hellgrau für User-Nachrichten */
+    --chat--color-secondary-shade-50: #e0e0e0;
+    
+    /* Basis-Farben */
+    --chat--color-white: #ffffff;
+    --chat--color-light: #f8f9fa;
+    --chat--color-light-shade-50: #e9ecef;
+    --chat--color-light-shade-100: #dee2e6;
+    --chat--color-medium: #adb5bd;
+    --chat--color-dark: #212529;
+    --chat--color-disabled: #6c757d;
+    --chat--color-typing: #495057;
+
+    /* Spacing und Layout */
+    --chat--spacing: 1rem;
+    --chat--border-radius: 8px; /* Abgerundete Ecken */
+    --chat--transition-duration: 0.3s; /* Sanfte Übergänge */
+
+    /* Chat-Fenster Größe */
+    --chat--window--width: 380px;
+    --chat--window--height: 550px;
+
+    /* Header Styling */
+    --chat--header-height: auto;
+    --chat--header--padding: var(--chat--spacing);
+    --chat--header--background: var(--chat--color-dark);
+    --chat--header--color: var(--chat--color-white);
+    --chat--header--border-top: none;
+    --chat--header--border-bottom: 1px solid var(--chat--color-light-shade-100);
+    --chat--heading--font-size: 1.5em;
+    --chat--subtitle--font-size: 0.9em;
+    --chat--subtitle--line-height: 1.4;
+
+    /* Input-Bereich */
+    --chat--textarea--height: 60px;
+
+    /* Nachrichten Styling */
+    --chat--message--font-size: 0.95rem;
+    --chat--message--padding: 12px 16px;
+    --chat--message--border-radius: 12px;
+    --chat--message-line-height: 1.5;
+    
+    /* Bot-Nachrichten */
+    --chat--message--bot--background: var(--chat--color-white);
+    --chat--message--bot--color: var(--chat--color-dark);
+    --chat--message--bot--border: 1px solid var(--chat--color-light-shade-100);
+    
+    /* User-Nachrichten */
+    --chat--message--user--background: var(--chat--color-dark);
+    --chat--message--user--color: var(--chat--color-white);
+    --chat--message--user--border: none;
+    
+    /* Code-Bereiche */
+    --chat--message--pre--background: rgba(0, 0, 0, 0.05);
+
+    /* Toggle-Button (Chat-Icon) */
+    --chat--toggle--background: var(--chat--color-dark);
+    --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+    --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+    --chat--toggle--color: var(--chat--color-white);
+    --chat--toggle--size: 60px;
+}
+
+/* Zusätzliche Anpassungen für bessere Integration */
+.n8n-chat-widget {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Logo rechts oben im Chat-Header */
+.n8n-chat-window {
+    position: relative;
+}
+
+.n8n-chat-window::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-image: url('images/LogoHell.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Alternative: Logo im Header-Bereich */
+[data-testid="chat-header"] {
+    position: relative;
+}
+
+[data-testid="chat-header"]::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-image: url('images/LogoHell.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    z-index: 1000;
+}
+
+/* Debug: Sichtbare Umrandung für Header */
+[data-testid="chat-header"] {
+    border: 1px solid red;
+}
+
+/* Einfache Logo-Lösung mit höherer Spezifität */
+.n8n-chat-widget .n8n-chat-window {
+    position: relative;
+}
+
+.n8n-chat-widget .n8n-chat-window::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-image: url('images/LogoHell.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Logo nur im geöffneten Chat-Fenster */
+.n8n-chat-widget .n8n-chat-window:not(.n8n-chat-toggle)::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('images/LogoHell.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 0.9 !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Logo explizit vom Toggle-Button entfernen */
+.n8n-chat-toggle::before {
+    content: none !important;
+}
+
+/* Alternative: Logo nur wenn Chat geöffnet ist */
+.n8n-chat-widget[data-state="open"] .n8n-chat-window::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('images/LogoHell.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 0.9 !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Spezifischer Selektor für das Chat-Fenster */
+.n8n-chat-widget [data-testid="chat-window"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('images/LogoHell.svg') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 0.9 !important;
+    z-index: 9999 !important;
+    pointer-events: none !important;
+}
+
+/* Alle Toggle-Button Varianten ausschließen */
+.n8n-chat-toggle::before,
+[class*="chat-toggle"]::before,
+[data-testid="chat-toggle"]::before {
+    content: none !important;
+}
+
+/* Schatten für das Chat-Fenster */
+.n8n-chat-window {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+/* Hover-Effekte für Buttons */
+.n8n-chat-button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Scrollbar Styling */
+.n8n-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.n8n-chat-messages::-webkit-scrollbar-track {
+    background: var(--chat--color-light);
+}
+
+.n8n-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--chat--color-medium);
+    border-radius: 3px;
+}
+
+.n8n-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--chat--color-dark);
+} 

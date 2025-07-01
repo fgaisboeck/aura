@@ -9,6 +9,120 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <link href="chat-styles.css" rel="stylesheet" />
+    <style>
+        /* Logo nur im geöffneten Chat-Fenster */
+        .n8n-chat-widget .n8n-chat-window:not(.n8n-chat-toggle)::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 15px !important;
+            right: 15px !important;
+            width: 35px !important;
+            height: 35px !important;
+            background-image: url('images/LogoHell.svg') !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            opacity: 0.9 !important;
+            z-index: 9999 !important;
+            pointer-events: none !important;
+        }
+        
+        /* Logo explizit vom Toggle-Button entfernen */
+        .n8n-chat-toggle::before {
+            content: none !important;
+        }
+        
+        /* Alternative: Logo nur wenn Chat geöffnet ist */
+        .n8n-chat-widget[data-state="open"] .n8n-chat-window::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 15px !important;
+            right: 15px !important;
+            width: 35px !important;
+            height: 35px !important;
+            background-image: url('images/LogoHell.svg') !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            opacity: 0.9 !important;
+            z-index: 9999 !important;
+            pointer-events: none !important;
+        }
+        
+        /* Spezifischer Selektor für das Chat-Fenster */
+        .n8n-chat-widget [data-testid="chat-window"]::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 15px !important;
+            right: 15px !important;
+            width: 35px !important;
+            height: 35px !important;
+            background-image: url('images/LogoHell.svg') !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            opacity: 0.9 !important;
+            z-index: 9999 !important;
+            pointer-events: none !important;
+        }
+        
+        /* Alle Toggle-Button Varianten ausschließen */
+        .n8n-chat-toggle::before,
+        [class*="chat-toggle"]::before,
+        [data-testid="chat-toggle"]::before {
+            content: none !important;
+        }
+    </style>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    
+        createChat({
+            webhookUrl: 'https://mairmax437.app.n8n.cloud/webhook/f0a1fae0-dad3-451c-95f8-a677d9906f09/chat',
+            showWelcomeScreen: true,
+            defaultLanguage: 'de',
+            initialMessages: [
+                'Hallo! 👋',
+                'Willkommen bei AURA Creative Studio! Wie kann ich dir heute helfen?'
+            ],
+            i18n: {
+                de: {
+                    title: 'AURA Chat',
+                    subtitle: 'Wie können wir dir helfen?',
+                    footer: '',
+                    getStarted: 'Neue Konversation',
+                    inputPlaceholder: 'Schreibe deine Frage...',
+                },
+            },
+        }).then(() => {
+            // Logo dynamisch hinzufügen, wenn Chat geöffnet wird
+            setTimeout(() => {
+                const chatWindow = document.querySelector('.n8n-chat-window');
+                const chatToggle = document.querySelector('.n8n-chat-toggle');
+                
+                if (chatWindow && !chatToggle) {
+                    // Nur im Chat-Fenster, nicht auf dem Button
+                    const logo = document.createElement('div');
+                    logo.style.cssText = `
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        width: 35px;
+                        height: 35px;
+                        background-image: url('images/LogoHell.svg');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        opacity: 0.9;
+                        z-index: 9999;
+                        pointer-events: none;
+                    `;
+                    chatWindow.appendChild(logo);
+                }
+            }, 1000);
+        });
+    </script>
     <header>
         <nav class="navbar">
             <div class="logo">
