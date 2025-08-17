@@ -1,4 +1,18 @@
 /* Reset und Basis-Styles */
+
+.font-lato{
+    display: none;
+}
+
+.chat-powered-by {
+    display: none;
+}
+
+.chat-get-started-footer
+{
+    text-align: center;
+}
+
 * {
     margin: 0;
     padding: 0;

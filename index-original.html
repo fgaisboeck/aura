@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA - Website v4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/V4.mp4" type="video/mp4">
+                Ihr Browser unterstützt keine Video-Wiedergabe.
+            </video>
+        </section>
+
+        <section class="second-section">
+            <div class="section-content">
+                <h2>Was wir machen</h2>
+                <div class="wide-card">
+                    <div class="wide-card-content">
+                        <div class="card-visual">
+                            <img src="images/automatisierung.png" alt="Automatisierung" class="visual-placeholder">
+                        </div>
+                        <div class="card-text">
+                            <h2>Automatisierung im Handumdrehen</h2>
+                            <p>Optimieren Sie Ihre Geschäftsprozesse durch intelligente Automatisierungslösungen. Wir entwickeln maßgeschneiderte Workflows, die repetitive Aufgaben eliminieren und Ihre Produktivität steigern.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Start building</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wide-card ai-agents-card">
+                    <div class="wide-card-content reverse-layout">
+                        <div class="card-text">
+                            <h2>KI-Agenten der Zukunft</h2>
+                            <p>Revolutionieren Sie Ihre Arbeitsprozesse mit intelligenten KI-Agenten. Unsere autonomen Systeme lernen, adaptieren und handeln selbstständig, um komplexe Aufgaben zu bewältigen und Ihr Unternehmen voranzubringen.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Start building</button>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <img src="images/ki-agenten.png" alt="KI-Agenten" class="visual-placeholder ai-placeholder">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wide-card web-dev-card">
+                    <div class="wide-card-content">
+                        <div class="card-visual">
+                            <img src="images/web-dev.jpg" alt="Web-Entwicklung" class="visual-placeholder web-placeholder">
+                        </div>
+                        <div class="card-text">
+                            <h2>Moderne Web-Entwicklung</h2>
+                            <p>Erschaffen Sie beeindruckende digitale Erlebnisse mit modernen Web-Technologien. Von responsiven Websites bis zu komplexen Web-Anwendungen - wir bringen Ihre Vision ins Netz mit performanten und benutzerfreundlichen Lösungen.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Start building</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pricing-footer">
+        <div class="pricing-container">
+            <div class="pricing-text">
+                <h2 class="pricing-title">Du willst noch mehr über <span class="highlight-green">uns erfahren</span>?</h2>
+                <p class="pricing-subtitle">Entdecke unsere Projekte und lerne unser Team kennen. Wir freuen uns darauf, dir zu zeigen, was wir alles für dich tun können.</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card projects-card">
+                    <div class="card-image">
+                        <div class="footer-placeholder">Platzhalter Bild</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Unsere Projekte</h3>
+                        <p class="card-description">Schaue dir unsere neuesten Projekte und Erfolgsgeschichten an. Von Automatisierung bis KI-Lösungen.</p>
+                        <a href="projects.html" class="plan-button">Projekte ansehen</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card about-card">
+                    <div class="card-image">
+                        <div class="footer-placeholder">Platzhalter Bild</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Über uns</h3>
+                        <p class="card-description">Lerne unser Team kennen und erfahre mehr über unsere Mission und Vision für die Zukunft der Technologie.</p>
+                        <a href="about.html" class="plan-button">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <div class="nav-icon">
+            <img src="images/LogoHell.svg" alt="AURA Logo" class="nav-logo">
+        </div>
+        <a href="index.html" class="nav-link">Start</a>
+        <a href="about.html" class="nav-link">Über uns</a>
+        <a href="projects.html" class="nav-link">Projekte</a>
+    </nav>
+
+    <script>
+        // Intersection Observer für Scroll-Animationen
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Animiere auch die Buttons mit einer zusätzlichen Verzögerung
+                    if (entry.target.classList.contains('card-text')) {
+                        const buttons = entry.target.querySelector('.card-buttons');
+                        if (buttons) {
+                            setTimeout(() => {
+                                buttons.classList.add('animate');
+                            }, 200);
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Alle animierbaren Elemente beobachten
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.placeholder-image, .text-content, .card-text, .card-visual');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

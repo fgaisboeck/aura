@@ -3,286 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA – Creative Studio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <title>AURA - Website v4</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <link href="chat-styles.css" rel="stylesheet" />
-    <style>
-        /* Logo nur im geöffneten Chat-Fenster */
-        .n8n-chat-widget .n8n-chat-window:not(.n8n-chat-toggle)::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 15px !important;
-            right: 15px !important;
-            width: 35px !important;
-            height: 35px !important;
-            background-image: url('images/LogoHell.svg') !important;
-            background-size: contain !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-            opacity: 0.9 !important;
-            z-index: 9999 !important;
-            pointer-events: none !important;
-        }
-        
-        /* Logo explizit vom Toggle-Button entfernen */
-        .n8n-chat-toggle::before {
-            content: none !important;
-        }
-        
-        /* Alternative: Logo nur wenn Chat geöffnet ist */
-        .n8n-chat-widget[data-state="open"] .n8n-chat-window::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 15px !important;
-            right: 15px !important;
-            width: 35px !important;
-            height: 35px !important;
-            background-image: url('images/LogoHell.svg') !important;
-            background-size: contain !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-            opacity: 0.9 !important;
-            z-index: 9999 !important;
-            pointer-events: none !important;
-        }
-        
-        /* Spezifischer Selektor für das Chat-Fenster */
-        .n8n-chat-widget [data-testid="chat-window"]::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 15px !important;
-            right: 15px !important;
-            width: 35px !important;
-            height: 35px !important;
-            background-image: url('images/LogoHell.svg') !important;
-            background-size: contain !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-            opacity: 0.9 !important;
-            z-index: 9999 !important;
-            pointer-events: none !important;
-        }
-        
-        /* Alle Toggle-Button Varianten ausschließen */
-        .n8n-chat-toggle::before,
-        [class*="chat-toggle"]::before,
-        [data-testid="chat-toggle"]::before {
-            content: none !important;
-        }
-    </style>
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-    
-        createChat({
-            webhookUrl: 'https://mairmax437.app.n8n.cloud/webhook/f0a1fae0-dad3-451c-95f8-a677d9906f09/chat',
-            showWelcomeScreen: true,
-            defaultLanguage: 'de',
-            initialMessages: [
-                'Hallo! 👋',
-                'Willkommen bei AURA Creative Studio! Wie kann ich dir heute helfen?'
-            ],
-            i18n: {
-                de: {
-                    title: 'AURA Chat',
-                    subtitle: 'Wie können wir dir helfen?',
-                    footer: '',
-                    getStarted: 'Neue Konversation',
-                    inputPlaceholder: 'Schreibe deine Frage...',
-                },
-            },
-        }).then(() => {
-            // Logo dynamisch hinzufügen, wenn Chat geöffnet wird
-            setTimeout(() => {
-                const chatWindow = document.querySelector('.n8n-chat-window');
-                const chatToggle = document.querySelector('.n8n-chat-toggle');
-                
-                if (chatWindow && !chatToggle) {
-                    // Nur im Chat-Fenster, nicht auf dem Button
-                    const logo = document.createElement('div');
-                    logo.style.cssText = `
-                        position: absolute;
-                        top: 15px;
-                        right: 15px;
-                        width: 35px;
-                        height: 35px;
-                        background-image: url('images/LogoHell.svg');
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        opacity: 0.9;
-                        z-index: 9999;
-                        pointer-events: none;
-                    `;
-                    chatWindow.appendChild(logo);
-                }
-            }, 1000);
-        });
-    </script>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/LogoDunkel.svg" alt="AURA Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#leistungen">Leistungen</a></li>
-                <!-- <li><a href="#portfolio">Portfolio</a></li> -->
-                 <!-- hall -->
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-            <div class="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
     <main>
-        <section class="hero" id="home">
-            <video src="images/V3.mp4" alt="Hero Background" class="hero-bg" autoplay muted loop playsinline>
-                <source src="images/V3.mp4" type="video/mp4">
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="videos/V4.mp4" type="video/mp4">
+                Ihr Browser unterstützt keine Video-Wiedergabe.
             </video>
-            <!-- <div class="hero-content">
-                <h1>Shaping Presence</h1>
-                <p class="subtitle">Echter Mehrwert durch Aufmerksamkeit</p>
-            </div> -->
-            <div class="scroll-arrow" id="scrollArrow" style="display:none; position: absolute !important; left: 50% !important; bottom: 2rem !important; transform: translateX(-50%) !important; right: auto !important;">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 36L12 24H36L24 36Z" fill="white" fill-opacity="0.7"/>
-                </svg>
-            </div>
         </section>
 
-        <section class="leistungen" id="leistungen">
-            <style>
-                .word-highlight {
-                    font-weight: bold;
-                    color: black;
-                }
-            </style>
-            <h2>Leistungen</h2>
-            <div class="leistungen-grid">
-                <div class="leistung-item">
-                    <h3>Website & Webdesign</h3>
-                    <p>Websites für Jeden - Werde online <span class="word-highlight">Sichtbar</span>! Wecke <span class="word-highlight">Interesse</span>, Informiere und Verbinde dich mit deiner Zielgruppe. Shape your online <span class="word-highlight">Presence</span>!</p>
-                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
+        <section class="second-section">
+            <div class="section-content">
+                <h2> Individuelle Lösungen für Unternehmenswachstum</h2>
+                <h3 class="section-subtitle">Effizienz steigern, Chancen nutzen, Zukunft sichern</h3>
+                
+                <!-- Logo Carousel -->
+                <div class="logo-carousel-container">
+                    <div class="logo-carousel">
+                        <div class="logo-track" id="logoTrack">
+                            <!-- Logos will be dynamically generated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
-                <div class="leistung-item">
-                    <h3>Foto & Videografie</h3>
-                    <p>Business oder Privat – Fotos und Videos mit <span class="word-highlight">Mehrwert</span>. Egal ob Produkt-, Imagebild oder Event-Shootings. Halte fest, was <span class="word-highlight">Begeistert</span>.</p>
-                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
-                </div>
-                <div class="leistung-item">
-                    <h3>Social Media Management</h3>
-                    <p>Vom ersten Post bis zum <span class="word-highlight">1000en Follower</span> - Gemeinsam machen wir aus eurem Social Media einen echten <span class="word-highlight">Mehrwert</span>.</p>
-                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
-                </div>
-                <div class="leistung-item">
-                    <h3>Marketing & Content</h3>
-                    <p>Alles aus einer Hand. Fotografiert, Bearbeitet und Veröffentlicht - Mit uns erreicht euer Marketing ein neues <span class="word-highlight">Level</span>.</p>
-                    <a href="#kontakt" class="cta-button">Mehr Informationen</a>
-                </div>
-            </div>
-        </section>
 
-        <section class="cta-section">
-            <h2>Let your Presence Shine</h2>
-            <p>GRATIS ERSTGESPRÄCH - Lass uns zusammen herausfinden, wie wir euch weiterhelfen und bestmöglich unterstützen können.</p>
-            <a href="#kontakt" class="cta-button">Kontakt</a>
-        </section>
-<!-- 
-        <section class="portfolio" id="portfolio">
-            <h2>Portfolio</h2>
-            <p class="section-intro">Jedes unserer Projekte erzählt eine eigene Geschichte – geprägt von kreativen Ideen, individuellen Lösungen und erfolgreicher Zusammenarbeit.</p>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="images/mitter.png" alt="Mitter Projekt">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="category">WEBSITE</span>
-                        <h3>Mitter</h3>
+                <div class="wide-card">
+                    <div class="wide-card-content">
+                        <div class="card-visual">
+                            <img src="images/automatisierung.png" alt="Automatisierung" class="visual-placeholder">
+                        </div>
+                        <div class="card-text">
+                            <h2>Automatisierung</h2>
+                            <p>Mit modernster Prozessautomatisierung helfen wir Unternehmen Zeit zu sparen, Kosten zu senken und Fehler zu minimieren. Wir identifizieren wiederkehrende Aufgaben und entwickeln smarte Automatisierungslösungen, die Ihre Abläufe effizienter machen – von internen Workflows bis hin zu komplexen Datenschnittstellen. So gewinnen Sie Ressourcen für strategische Aufgaben, steigern Ihre Skalierbarkeit und sichern langfristig Wettbewerbsfähigkeit.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Mehr erfahren</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="images/aura.png" alt="Aura Projekt">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="category">SOCIAL MEDIA</span>
-                        <h3>Aura</h3>
+                
+                <div class="wide-card ai-agents-card">
+                    <div class="wide-card-content reverse-layout">
+                        <div class="card-text">
+                            <h2>AI-Agents</h2>
+                            <p>Unsere AI-Agents übernehmen Routinetätigkeiten, analysieren Daten und unterstützen Teams in Echtzeit. Dadurch erhöhen Sie Effizienz, Servicequalität und Geschwindigkeit Ihrer Prozesse. Ob Kundenservice, Datenmanagement oder interne Workflows – AI-Agenten arbeiten zuverlässig, sicher und nachvollziehbar. Das schafft Freiraum und verschafft Ihrem Unternehmen einen klaren Wettbewerbsvorteil.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Mehr erfahren</button>
+                            </div>
+                        </div>
+                        <div class="card-visual">
+                            <img src="images/ki-agenten.png" alt="KI-Agenten" class="visual-placeholder ai-placeholder">
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="images/mulitathletecoaching.png" alt="Multiathlete Projekt">
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="category">MARKETING</span>
-                        <h3>Multiathlete</h3>
+                
+                <div class="wide-card web-dev-card">
+                    <div class="wide-card-content">
+                        <div class="card-visual">
+                            <img src="images/web-dev.jpg" alt="Web-Entwicklung" class="visual-placeholder web-placeholder">
+                        </div>
+                        <div class="card-text">
+                            <h2>Smarte Webentwicklung</h2>
+                            <p>Wir entwickeln performante, sichere und skalierbare Weblösungen. Von Corporate Websites bis SaaS-Plattformen setzen wir auf moderne Technologien, optimierte User Experience und höchste Sicherheitsstandards. Unser Versprechen: Schnelle Ladezeiten, überzeugendes Design und nachhaltige Sichtbarkeit durch den Einsatz von Spitzentechnologie in der Webentwicklung.</p>
+                            <div class="card-buttons">
+                                <button class="btn-primary-large">Mehr erfahren</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-         -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="faq-title">Häufig gestellte Fragen</h2>
+                <p class="faq-subtitle">Frage nicht dabei? Chatte mit uns! Unten rechts aufs Chatsymbol klicken ;)</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Was versteht man unter Automatisierung in Unternehmen?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Automatisierung umfasst die digitale Abbildung wiederkehrender Prozesse. Sie spart Zeit, reduziert Fehler und erhöht die Effizienz von Workflows, Kommunikation und Datenschnittstellen.</p>
+                        </div>
+                    </div>
 
-        <section class="about" id="about">
-            <div class="about-content">
-                <h2>Über uns</h2>
-                <p class="intro">Hi! Wir sind AURA.</p>
-                <p>Ein junges Team, das euch hilft, herauszustechen und einen bleibenden Eindruck bei anderen zu hinterlassen.</p>
-                <p class="quote">"Choose your dreams over your excuses!"</p>
-            </div>
-        </section>
-<!-- 
-        <section class="testimonials">
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <p>"100% Weiterempfehlung! AURA hat unseren Verein komplett neu aufgestellt und es war die beste Entscheidung. Die Zusammenarbeit war völlig unkompliziert und das Team ist einfach super sympathisch!"</p>
-                    <span class="author">- Mitter Verein</span>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Welche Vorteile bieten AI-Agents?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>AI-Agents übernehmen Routineaufgaben, analysieren Daten und unterstützen Teams. Sie steigern Produktivität, verbessern Servicequalität und schaffen Freiraum für strategische Tätigkeiten.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Welche Arten von Weblösungen entwickelt ihr?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Wir entwickeln moderne, performante und skalierbare Weblösungen – von Corporate Websites über Web-Apps bis zu SaaS-Plattformen – immer mit Fokus auf Sicherheit, UX und SEO.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Sind eure Automatisierungslösungen für alle Unternehmensgrößen geeignet?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ja, wir passen Lösungen individuell an – vom kleinen Team bis zum Großunternehmen – und skalieren Prozesse je nach Bedarf.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Wie sicher sind die AI-Agents im Umgang mit sensiblen Daten?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Unsere AI-Agenten arbeiten nach hohen Sicherheits- und Datenschutzstandards. Alle Datenverarbeitungen sind nachvollziehbar und kontrollierbar.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Wie lange dauert die Umsetzung einer Webentwicklungslösung?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Die Dauer hängt vom Projektumfang ab. Kleine Websites können in wenigen Wochen fertiggestellt werden, komplexe Web-Apps benötigen mehrere Monate.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Wie unterstützt ihr die Integration von Automatisierung und AI-Agents in bestehende Systeme?</span>
+                            <div class="faq-icon">▼</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Wir analysieren bestehende Prozesse, planen die Integration und implementieren Lösungen nahtlos in vorhandene Systeme, um Unterbrechungen zu vermeiden.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
- -->
-        <section class="kontakt" id="kontakt">
-            <h2>Kontakt</h2>
-            <div class="kontakt-content">
-                <p>Hast du Fragen oder möchtest du ein Projekt besprechen? Schreib uns einfach eine E-Mail!</p>
-                <a href="mailto:shapingaura@gmail.com?subject=Kontaktanfrage AURA Website&body=Hallo Team-AURA,%0D%0A%0D%0AIch habe folgendes Anliegen:%0D%0A%0D%0AMit freundlichen Grüßen," class="cta-button">E-Mail senden</a>
-            </div>
-        </section>
-<!-- 
-        <section class="social-media">
-            <h2>Get social with us</h2>
-            <div class="social-icons">
-                <a href="#" class="social-icon">Instagram</a>
-                <a href="#" class="social-icon">Facebook</a>
-                <a href="#" class="social-icon">YouTube</a>
-            </div>
-        </section>
-        -->
     </main>
- 
 
-    <footer>
-        <div class="footer-content">
-            <!-- 
-            <div class="footer-links">
-                <a href="#">Impressum</a>
-                <a href="#">Datenschutzerklärung</a>
-                <a href="#">AGB</a>
+    <footer class="pricing-footer">
+        <div class="pricing-container">
+            <div class="pricing-text">
+                <h2 class="pricing-title">Du willst noch mehr über <span class="highlight-green">uns erfahren</span>?</h2>
+                <p class="pricing-subtitle">Entdecke unsere Projekte und lerne unser Team kennen. Wir freuen uns darauf, dir zu zeigen, was wir alles für dich tun können.</p>
             </div>
-             -->
-            <p>&copy; 2025 AURA. Alle Rechte vorbehalten.</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card projects-card">
+                    <div class="card-content">
+                        <h3>Unsere Projekte</h3>
+                        <p class="card-description">Schaue dir unsere neuesten Projekte und Erfolgsgeschichten an. Von Automatisierung bis KI-Lösungen.</p>
+                        <a href="projects.html" class="plan-button">Projekte ansehen</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card about-card">
+                    <div class="card-content">
+                        <h3>Über uns</h3>
+                        <p class="card-description">Lerne unser Team kennen und erfahre mehr über unsere Mission und Vision für die Zukunft der Technologie.</p>
+                        <a href="about.html" class="plan-button">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <nav class="bottom-nav">
+        <div class="nav-icon">
+            <img src="images/LogoHell.svg" alt="AURA Logo" class="nav-logo">
+        </div>
+        <a href="index.html" class="nav-link">Start</a>
+        <a href="about.html" class="nav-link">Über uns</a>
+        <a href="projects.html" class="nav-link">Projekte</a>
+        <a href="https://calendly.com/office-shapingaura/30min" class="nav-link" target="_blank">Termin</a>
+    </nav>
+
+    <script>
+        // Intersection Observer für Scroll-Animationen
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Animiere auch die Buttons mit einer zusätzlichen Verzögerung
+                    if (entry.target.classList.contains('card-text')) {
+                        const buttons = entry.target.querySelector('.card-buttons');
+                        if (buttons) {
+                            setTimeout(() => {
+                                buttons.classList.add('animate');
+                            }, 200);
+                        }
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Alle animierbaren Elemente beobachten
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.placeholder-image, .text-content, .card-text, .card-visual');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // FAQ Toggle Funktionalität
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    // Schließe alle anderen FAQs
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle aktuelles FAQ
+                    item.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
+            });
+
+            // Logo Carousel Setup
+            const logoTrack = document.getElementById('logoTrack');
+            const logos = [
+                { src: 'images/logos/amazon.png', alt: 'Amazon' },
+                { src: 'images/logos/google.png', alt: 'Google' },
+                { src: 'images/logos/n8n.png', alt: 'n8n' },
+                { src: 'images/logos/openai.png', alt: 'OpenAI' }
+            ];
+
+            // Calculate how many logo sets we need to fill the screen width
+            const logoWidth = 150; // min-width of logo-slide
+            const logoGap = 64; // 4rem gap
+            const screenWidth = window.innerWidth;
+            const logosNeeded = Math.ceil(screenWidth / (logoWidth + logoGap)) * 3; // 3x for smooth infinite scroll
+
+            // Generate logo slides
+            for (let i = 0; i < logosNeeded; i++) {
+                const logoIndex = i % logos.length;
+                const logoSlide = document.createElement('div');
+                logoSlide.className = 'logo-slide';
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = logos[logoIndex].src;
+                logoImg.alt = logos[logoIndex].alt;
+                logoImg.className = 'partner-logo';
+                
+                logoSlide.appendChild(logoImg);
+                logoTrack.appendChild(logoSlide);
+            }
+
+            // Recalculate on window resize
+            window.addEventListener('resize', () => {
+                const newScreenWidth = window.innerWidth;
+                const newLogosNeeded = Math.ceil(newScreenWidth / (logoWidth + logoGap)) * 3;
+                
+                if (newLogosNeeded !== logoTrack.children.length) {
+                    logoTrack.innerHTML = '';
+                    for (let i = 0; i < newLogosNeeded; i++) {
+                        const logoIndex = i % logos.length;
+                        const logoSlide = document.createElement('div');
+                        logoSlide.className = 'logo-slide';
+                        
+                        const logoImg = document.createElement('img');
+                        logoImg.src = logos[logoIndex].src;
+                        logoImg.alt = logos[logoIndex].alt;
+                        logoImg.className = 'partner-logo';
+                        
+                        logoSlide.appendChild(logoImg);
+                        logoTrack.appendChild(logoSlide);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
