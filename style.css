@@ -1000,8 +1000,8 @@ body {
 
 /* Wide Card Design */
 .wide-card {
-    width: 70vw;
-    max-width: 1000px;
+    width: 85vw;
+    max-width: 1300px;
     margin: 4rem auto;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
@@ -1099,8 +1099,8 @@ body {
 
 .wide-card-content {
     display: grid;
-    grid-template-columns: 45% 55%;
-    min-height: 500px;
+    grid-template-columns: 50% 50%;
+    min-height: 400px;
     align-items: stretch;
 }
 
@@ -1126,6 +1126,7 @@ body {
     font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1.5rem;
+    padding-bottom: 10px;
     line-height: 1.1;
     letter-spacing: -0.02em;
     text-align: left;
@@ -1230,7 +1231,7 @@ body {
 }
 
 .reverse-layout {
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 50% 50%;
 }
 
 .reverse-layout .card-text {
