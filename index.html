@@ -6,7 +6,17 @@
     <title>AURA - Website v4</title>
     <link rel="stylesheet" href="style.css">
 </head>
+    
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://mairmax437.app.n8n.cloud/webhook/f0a1fae0-dad3-451c-95f8-a677d9906f09/chat'
+	});
+</script>
 <body>
+    
     <main>
         <section class="hero">
             <video class="hero-video" autoplay muted loop playsinline>
