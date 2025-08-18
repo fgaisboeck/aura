@@ -12,8 +12,34 @@
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
 	createChat({
-		webhookUrl: 'https://mairmax437.app.n8n.cloud/webhook/f0a1fae0-dad3-451c-95f8-a677d9906f09/chat'
-	});
+	webhookUrl: 'https://mairmax437.app.n8n.cloud/webhook/f0a1fae0-dad3-451c-95f8-a677d9906f09/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	loadPreviousSession: true,
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'de',
+	initialMessages: [
+		'Hallo! 👋',
+		'My name ist Anton. Wie kann ich dir helfen?'
+	],
+	i18n: {
+		de: {
+			title: 'Hallo! 👋',
+			subtitle: "Chatte jetzt mit uns! Wir sind 24/7 für dich da.",
+			footer: 'Made with ♥️ by AURA',
+			getStarted: 'Neue Unterhaltung',
+			inputPlaceholder: 'Schreib uns deine Frage..',
+		},
+	},
+	enableStreaming: false,
+});
 </script>
 <body>
     
