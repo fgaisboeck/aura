@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+.wide-card {
+    margin-bottom: 25px;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -42,6 +46,7 @@ body {
     padding: 100px 0 0 0;
     position: relative;
     overflow: hidden;
+    padding-bottom: 40px;
 }
 
 .section-content {
@@ -866,7 +871,6 @@ body {
 
 /* FAQ Section */
 .faq-section {
-    padding: 100px 0;
     background: #FFFFFF;
     position: relative;
 }
@@ -1002,7 +1006,6 @@ body {
 .wide-card {
     width: 85vw;
     max-width: 1300px;
-    margin: 4rem auto;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -2008,7 +2011,6 @@ body {
 
     .wide-card {
         width: 90vw;
-        margin: 2rem auto;
         border-radius: 20px;
     }
 
@@ -2273,7 +2275,6 @@ body {
 
     .wide-card {
         width: 95vw;
-        margin: 1.5rem auto;
         border-radius: 16px;
     }
 
@@ -2808,7 +2809,6 @@ body {
 
     /* Wide Card responsive */
     .wide-card {
-        margin: 2rem auto;
         border-radius: 20px;
     }
 
@@ -2911,13 +2911,13 @@ body {
 /* Extra Small Mobile Devices */
 @media (max-width: 480px) {
     .section-content h2 {
-        font-size: 2rem;
-        font-weight: 700;
+        font-size: 1.8rem;
+        font-weight: 600;
     }
     
     .section-subtitle {
-        font-size: 1.1rem;
-        font-weight: 500;
+        font-size: 0.9rem;
+        font-weight: 400;
         margin-bottom: 1.5rem;
         padding: 0 1.5rem;
     }
@@ -2985,8 +2985,7 @@ body {
     }
 
     .wide-card {
-        width: 98vw;
-        margin: 1rem auto;
+        width: 90vw;
         border-radius: 12px;
     }
 
@@ -3108,4 +3107,24 @@ body {
         width: 16px;
         height: 16px;
     }
+}
+
+/* Chat Header Styling */
+.chat-layout .chat-header {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B7CF6 50%, #EC4899 100%) !important;
+}
+
+/* Chat User Message Styling */
+.chat-message.chat-message-from-user {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B7CF6 50%, #EC4899 100%) !important;
+}
+
+/* Chat Window Toggle Styling */
+.chat-window-toggle {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B7CF6 50%, #EC4899 100%) !important;
+}
+
+/* Chat Window Wrapper Position */
+.chat-window-wrapper {
+    right: 7px !important;
 }

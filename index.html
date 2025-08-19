@@ -24,10 +24,13 @@
 	loadPreviousSession: true,
 	metadata: {},
 	showWelcomeScreen: false,
-	defaultLanguage: 'de',
-	initialMessages: [
+	defaultLanguage: navigator.language.substring(0, 2) || 'de',
+	initialMessages: navigator.language.substring(0, 2) === 'de' ? [
 		'Hallo! 👋',
-		'Ich heiß Anton. Wie kann ich dir helfen?'
+		'Ich heiß Anton. Wie kann ich dir helfen?',
+	] : [
+		'Hello! 👋',
+		'I\'m Anton. How can I help you?',
 	],
 	i18n: {
 		de: {
