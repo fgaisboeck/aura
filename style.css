@@ -1266,7 +1266,7 @@ body {
 .about-hero-content {
     text-align: center;
     max-width: 900px;
-    padding: 0 2rem;
+    padding: 2rem;
     z-index: 2;
     position: relative;
 }
@@ -1373,7 +1373,7 @@ body {
 .projects-hero-content {
     text-align: center;
     max-width: 900px;
-    padding: 0 2rem;
+    padding: 2rem;
     z-index: 2;
     position: relative;
 }
