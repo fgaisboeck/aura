@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA - Website v4</title>
+    <title>AURA</title>
+    <link rel="icon" type="image/x-icon" href="images/LogoHell.svg">
     <link rel="stylesheet" href="style.css">
 </head>
     
@@ -68,50 +69,61 @@
                     </div>
                 </div>
 
-                <div class="wide-card">
-                    <div class="wide-card-content">
-                        <div class="card-visual">
-                            <img src="images/automatisierung.png" alt="Automatisierung" class="visual-placeholder">
+                <div class="simple-card-wrapper">
+                    <div class="simple-card">
+                        <div class="simple-card-image">
+                            <img src="images/automatisierung.png" alt="Placeholder" class="simple-image">
                         </div>
-                        <div class="card-text">
-                            <h2>Automatisierung</h2>
-                            <p>Mit modernster Prozessautomatisierung helfen wir Unternehmen Zeit zu sparen, Kosten zu senken und Fehler zu minimieren. Wir identifizieren wiederkehrende Aufgaben und entwickeln smarte Automatisierungslösungen, die Ihre Abläufe effizienter machen – von internen Workflows bis hin zu komplexen Datenschnittstellen. So gewinnen Sie Ressourcen für strategische Aufgaben, steigern Ihre Skalierbarkeit und sichern langfristig Wettbewerbsfähigkeit.</p>
-                            <div class="card-buttons">
-                                <button class="btn-primary-large">Mehr erfahren</button>
-                            </div>
+                        <div class="simple-card-content">
+                            <span class="simple-title">Automatisierung</span>
+                            <span class="simple-description">Moderne Prozessautomatisierung spart Zeit, senkt Kosten und reduziert Fehler. Wir entwickeln smarte Lösungen für Ihre wiederkehrenden Aufgaben – von Workflows bis Datenschnittstellen. Das schafft Freiraum für strategische Tätigkeiten und stärkt Ihre Wettbewerbsfähigkeit.</span>
+                            <span class="simple-button">Mehr erfahren</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="wide-card ai-agents-card">
-                    <div class="wide-card-content reverse-layout">
-                        <div class="card-text">
-                            <h2>AI-Agents</h2>
-                            <p>Unsere AI-Agents übernehmen Routinetätigkeiten, analysieren Daten und unterstützen Teams in Echtzeit. Dadurch erhöhen Sie Effizienz, Servicequalität und Geschwindigkeit Ihrer Prozesse. Ob Kundenservice, Datenmanagement oder interne Workflows – AI-Agenten arbeiten zuverlässig, sicher und nachvollziehbar. Das schafft Freiraum und verschafft Ihrem Unternehmen einen klaren Wettbewerbsvorteil.</p>
-                            <div class="card-buttons">
-                                <button class="btn-primary-large">Mehr erfahren</button>
-                            </div>
+
+                <!-- Desktop Version: AI-Agents Card -->
+                <div class="simple-card-wrapper desktop-only">
+                    <div class="simple-card">
+                        <div class="simple-card-content">
+                            <span class="simple-title">AI-Agents</span>
+                            <span class="simple-description">Unsere AI-Agents übernehmen Routinetätigkeiten, analysieren Daten und unterstützen Teams in Echtzeit. Dadurch erhöhen Sie Effizienz, Servicequalität und Geschwindigkeit Ihrer Prozesse. Ob Kundenservice, Datenmanagement oder interne Workflows – AI-Agenten arbeiten zuverlässig, sicher und nachvollziehbar. Das schafft Freiraum und verschafft Ihrem Unternehmen einen klaren Wettbewerbsvorteil.</span>
+                            <span class="simple-button">Mehr erfahren</span>
                         </div>
-                        <div class="card-visual">
-                            <img src="images/ki-agenten.png" alt="KI-Agenten" class="visual-placeholder ai-placeholder">
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="wide-card web-dev-card">
-                    <div class="wide-card-content">
-                        <div class="card-visual">
-                            <img src="images/web-dev.jpg" alt="Web-Entwicklung" class="visual-placeholder web-placeholder">
-                        </div>
-                        <div class="card-text">
-                            <h2>Smarte Webentwicklung</h2>
-                            <p>Wir entwickeln performante, sichere und skalierbare Weblösungen. Von Corporate Websites bis SaaS-Plattformen setzen wir auf moderne Technologien, optimierte User Experience und höchste Sicherheitsstandards. Unser Versprechen: Schnelle Ladezeiten, überzeugendes Design und nachhaltige Sichtbarkeit durch den Einsatz von Spitzentechnologie in der Webentwicklung.</p>
-                            <div class="card-buttons">
-                                <button class="btn-primary-large">Mehr erfahren</button>
-                            </div>
+                        <div class="simple-card-image">
+                            <img src="images/ki-agenten.png" alt="Placeholder" class="simple-image">
                         </div>
                     </div>
                 </div>
+
+                <!-- Mobile Version: AI-Agents Card -->
+                <div class="simple-card-wrapper mobile-only">
+                    <div class="simple-card">
+                        <div class="simple-card-image">
+                            <img src="images/ki-agenten.png" alt="Placeholder" class="simple-image">
+                        </div>
+                        <div class="simple-card-content">
+                            <span class="simple-title">AI-Agents</span>
+                            <span class="simple-description">Unsere AI-Agents übernehmen Routinetätigkeiten, analysieren Daten und unterstützen Teams in Echtzeit. Dadurch erhöhen Sie Effizienz, Servicequalität und Geschwindigkeit Ihrer Prozesse. Ob Kundenservice, Datenmanagement oder interne Workflows – AI-Agenten arbeiten zuverlässig, sicher und nachvollziehbar. Das schafft Freiraum und verschafft Ihrem Unternehmen einen klaren Wettbewerbsvorteil.</span>
+                            <span class="simple-button">Mehr erfahren</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="simple-card-wrapper">
+                    <div class="simple-card">
+                        <div class="simple-card-image">
+                            <img src="images/web-dev.jpg" alt="Placeholder" class="simple-image">
+                        </div>
+                        <div class="simple-card-content">
+                            <span class="simple-title">Smarte Webentwicklung</span>
+                            <span class="simple-description">Wir entwickeln performante, sichere und skalierbare Weblösungen. Von Corporate Websites bis SaaS-Plattformen setzen wir auf moderne Technologien, optimierte User Experience und höchste Sicherheitsstandards. Unser Versprechen: Schnelle Ladezeiten, überzeugendes Design und nachhaltige Sichtbarkeit durch den Einsatz von Spitzentechnologie in der Webentwicklung.</span>
+                            <span class="simple-button">Mehr erfahren</span>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </section>
 
@@ -259,7 +271,7 @@
 
         // Alle animierbaren Elemente beobachten
         document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.placeholder-image, .text-content, .card-text, .card-visual');
+            const animatedElements = document.querySelectorAll('.placeholder-image, .text-content, .card-text, .card-visual, .simple-card-image, .simple-card-content');
             animatedElements.forEach(el => {
                 observer.observe(el);
             });
